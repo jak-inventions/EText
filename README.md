@@ -1,2 +1,2 @@
 ## EText
-Formal, yet efficient
+### Formal, yet efficient
