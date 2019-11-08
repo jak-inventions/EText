@@ -68,10 +68,27 @@ SettingsStack.navigationOptions = {
 
 SettingsStack.path = '';
 
+const ConversationStack = createStackNavigator(
+  {
+    Conversation: ConversationScreen,
+  },
+  config
+);
+
+ConversationStack.navigationOptions = {
+  tabBarLabel: 'Conversation',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+  ),
+};
+
+ConversationStack.path = '';
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   conversationsStack,
   SettingsStack,
+  ConversationStack,
 });
 
 tabNavigator.path = '';

@@ -17,7 +17,7 @@ class Contact extends React.Component{
 
   render(){
     return (
-      <Touchable style={styles.contact} background={Touchable.Ripple('grey')}>
+      <Touchable style={styles.contact} background={Touchable.Ripple('grey')} onPress={openConversation(this.props.email);}>
         <Text>
           <Text style={styles.contactHeader}>{this.props.name + "\n"}</Text>
           <Text style={styles.contactText}>{this.props.email}</Text>
@@ -25,6 +25,12 @@ class Contact extends React.Component{
       </Touchable>
     );
   };
+
+}
+
+function openConversation(email){
+
+
 
 }
 
