@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:8000');
+var socket = io.connect('https://etext-messaging.herokuapp.com');
 
 // submit text message without reload/refresh the page
 $('form').submit(function(e){
