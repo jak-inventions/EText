@@ -21,7 +21,7 @@ socket.on('is_online', function(username) {
 // ask username
 while(true){
   var username = prompt('Please tell me your name', "");
-  if(username != ""){
+  if(username != "" && username != null){
     break;
   }
 }
