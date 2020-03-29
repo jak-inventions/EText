@@ -1,0 +1,53 @@
+
+/* Fonts */
+
+@font-face{
+  src: url('../fonts/Roboto/Roboto-Light.ttf');
+  font-family: 'Roboto';
+}
+
+/* Ids */
+
+#icon{
+  display: inline-block;
+}
+
+#icon img{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#icon h1{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#icon h1 h2{
+  display: block;
+}
+
+/* Classes */
+
+/* Tags */
+
+header{
+  background: white;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+body{
+  margin: 0px;
+  padding: 0px;
+  background: #f4f4f4;
+}
+
+/* Other */
+
+*{
+  font-family: 'Roboto';
+  font-weight: normal;
+}
+
+/* Mobile */
