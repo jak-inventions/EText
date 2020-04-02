@@ -7,10 +7,34 @@ body
     div#icon
       img(src='img/icon.png')
       div#title
-        h1 EText
+        h1 EText (Pre-Alpha)
         h2 Formal, yet efficient
-    div#signIn
-      button Sign in
-      button Sign up
+    div#menu
+      a(href='/platforms').un Platforms
+      a(href='https://github.com/jak-inventions/EText').un Github
+      a(href='/signIn').un Sign in
   main
+    h1.headline Messaging for all platforms
+    section.blocks
+      div.block
+        div.icons
+          i(class='fab fa-android')
+          i(class='fab fa-windows')
+          i(class='fab fa-linux')
+          i(class='fab fa-html5')
+        h2 Cross Platform
+        p
+          | EText is Cross Platform meaning that it works on multiple operating
+          | systems.  Such include, Android, Windows, Linux, as well as a web
+          | version for any OS not supported.
+      div.block
+        div.icons
+          i(class='fab fa-osi')
+        h2 Open-Source
+        p
+          | EText developed using Nodejs, Express, Pug, and
+          | MongoDB.  Check it out on 
+          a(href='https://github.com/jak-inventions/EText') github.
+    
   footer
+    script(src='https://kit.fontawesome.com/9ff649492a.js' crossorigin='anonymous')

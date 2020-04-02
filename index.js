@@ -11,5 +11,7 @@ app.listen(port, function(){
 });
 
 app.get('/', function(req, res){
-  res.render('index.pug');
+  res.render('index.pug', {
+    signedIn: false
+  });
 });
