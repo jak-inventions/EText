@@ -1,17 +1,16 @@
 {
-  "name": "EText",
+  "name": "etext",
   "version": "1.0.0",
   "description": "EText is a messaging app that combines aspects of texting and emailing to make a unique messaging experience.\r ## Formal, yet efficient\r EText functions primarily like a texting app, but features extra capabilities, and customization for messages, allowing it to also be used in a formal environment.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jak-inventions/EText.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -21,12 +20,5 @@
   "dependencies": {
     "express": "^4.17.1",
     "pug": "^2.0.4"
-  },
-  "devDependencies": {
-    "acorn": "^7.1.1",
-    "braces": "^3.0.2",
-    "kind-of": "file:node_modules/kind-of",
-    "mem": "^6.0.1",
-    "minimist": "file:node_modules/minimist"
   }
 }

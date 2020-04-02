@@ -34,7 +34,7 @@
   margin-right: 30px;
 }
 
-#menu a{
+#menu a,button{
   margin-top: 0px;
   margin-right: 40px;
   font-size: 32px;
@@ -44,6 +44,23 @@
 
 #menu a:active.un:after{
   width: 50%;
+}
+
+#menu button{
+  background: transparent;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+#menu button:hover{
+  color: #579ff3;
+  border-color: #579ff3;
+}
+
+#menu button:active{
+  color: white;
+  border-color: #579ff3;
+  background: rgb(87, 159, 243);
 }
 
 /* Classes */
@@ -73,7 +90,6 @@
   margin-right: 20px;
   transition: 0.5s;
   cursor: default;
-  box-shadow: 0px 0px 5px 1px #e2e2e2;
 }
 
 .block  h2{
@@ -160,15 +176,6 @@ button{
   border-radius: 10px;
   cursor: pointer;
   transition: 0.5s;
-}
-
-button:hover{
-  background: transparent;
-}
-
-button:active{
-  background: #dbdbdb;
-  border-color: #b0b0b0;
 }
 
 button:focus{
