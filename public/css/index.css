@@ -84,6 +84,7 @@
 
 .block p{
   font-size: 18px;
+  line-height: 150%;
 }
 
 .block .icons{
@@ -92,16 +93,23 @@
   align-items: center;
 }
 
-.block i{
+.icons *{
   font-size: 40px;
   margin-top: 10px;
   margin-bottom: 0px;
   margin-left: 10px;
   margin-right: 10px;
+  color: #495057;
+}
+
+.icons span{
+  margin-left: 0px;
+  margin-right: 0px;
+  font-weight: bold;
 }
 
 .block:hover{
-  box-shadow: 0px 0px 15px 5px #e2e2e2;
+  box-shadow: 0px 0px 20px 5px #e2e2e2;
 }
 
 .un {
@@ -132,6 +140,9 @@ header{
   padding-top: 25px;
   padding-bottom: 25px;
   background: #303030;
+}
+
+header *{
   color: white;
 }
 
@@ -164,11 +175,16 @@ button:focus{
   outline: none;
 }
 
+i{
+  color: #495057;
+}
+
 /* Other */
 
 *{
   font-family: 'Roboto';
   font-weight: normal;
+  color: #303030;
 }
 
 /* Mobile */
