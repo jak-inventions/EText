@@ -9,7 +9,8 @@
 /* Ids */
 
 #icon{
-  display: inline-block;
+  margin-left: 25px;
+  display: inline;
 }
 
 #icon img{
@@ -17,15 +18,18 @@
   height: 100px;
   display: inline-block;
   vertical-align: middle;
+  border-radius: 20px;
 }
 
-#icon h1{
+#title{
   display: inline-block;
   vertical-align: middle;
+  line-height: 150%;
+  margin-left: 25px;
 }
 
-#icon h1 h2{
-  display: block;
+#signIn{
+  float: right;
 }
 
 /* Classes */
@@ -35,6 +39,10 @@
 header{
   background: white;
   border-bottom: 1px solid #e2e2e2;
+  display: inline-block;
+  width: 100vw;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 body{
