@@ -24,12 +24,18 @@
 #title{
   display: inline-block;
   vertical-align: middle;
-  line-height: 150%;
+  line-height: 125%;
   margin-left: 25px;
 }
 
 #signIn{
   float: right;
+  margin-top: 25px;
+  margin-right: 5px;
+}
+
+#signIn button{
+  margin-right: 35px;
 }
 
 /* Classes */
@@ -49,6 +55,28 @@ body{
   margin: 0px;
   padding: 0px;
   background: #f4f4f4;
+}
+
+button{
+  border: 1px solid #e2e2e2;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button:hover{
+  background: transparent;
+}
+
+button:active{
+  background: #6d6ae6;
+  color: white;
+}
+
+button:focus{
+  outline: none;
 }
 
 /* Other */
