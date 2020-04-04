@@ -15,3 +15,7 @@ app.get('/', function(req, res){
     signedIn: false
   });
 });
+
+app.get('/messaging', function(req, res){
+  
+});
