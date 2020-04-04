@@ -1,0 +1,189 @@
+
+/* Fonts */
+
+/* Ids */
+
+#icon{
+  margin-left: 25px;
+  display: inline;
+}
+
+#icon img{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 20px;
+}
+
+#title{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 125%;
+  margin-left: 25px;
+}
+
+#menu{
+  float: right;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+#menu a,button{
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 32px;
+  text-decoration: none;
+  color: white;
+}
+
+#menu a:active.un:after{
+  width: 50%;
+}
+
+/* Classes */
+
+.headline{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.blocks{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block{
+  display: inline-block;
+  width: 325px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid #e2e2e2;
+  border-radius: 25px;
+  background: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  transition: 0.3s;
+  cursor: default;
+}
+
+.block  h2{
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.block p{
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.block .icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons *{
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #495057;
+}
+
+.icons span{
+  margin-left: 0px;
+  margin-right: 0px;
+  font-weight: bold;
+}
+
+.block:hover{
+  box-shadow: 0px 0px 20px 5px #e2e2e2;
+}
+
+.un {
+  display: inline-block;
+}
+
+.un:after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  display: block;
+  margin: auto;
+  margin-top: 4px;
+  background: white;
+  transition: 0.3s;
+}
+
+.un:hover:after {
+  width: 100%;
+}
+
+/* Tags */
+
+header{
+  border-bottom: 1px solid #e2e2e2;
+  display: inline-block;
+  width: 100vw;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #303030;
+}
+
+header *{
+  color: white;
+}
+
+/* Other */
+
+/* Mobile */
+
+@media (max-width: 850px) {
+
+  #menu{
+    float: none;
+    margin: 0px;
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  #menu a{
+    font-size: 24px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  #icon img{
+    display: block;
+    margin: auto;
+  }
+
+  #title{
+    display: inline;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .blocks{
+    display: block;
+  }
+
+  .block{
+    display: block;
+    margin: auto;
+    width: 250px;
+    margin-bottom: 50px;
+  }
+
+  #menu a:active.un:after{
+    width: 100%;
+  }
+
+}
