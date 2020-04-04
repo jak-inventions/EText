@@ -46,23 +46,6 @@
   width: 50%;
 }
 
-#menu button{
-  background: transparent;
-  border-width: 2px;
-  border-radius: 10px;
-}
-
-#menu button:hover{
-  color: #579ff3;
-  border-color: #579ff3;
-}
-
-#menu button:active{
-  color: white;
-  border-color: #579ff3;
-  background: rgb(87, 159, 243);
-}
-
 /* Classes */
 
 .headline{
@@ -195,3 +178,42 @@ i{
 }
 
 /* Mobile */
+
+@media (max-width: 850px) {
+
+  #menu{
+    float: none;
+    margin: 0px;
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  #menu a{
+    font-size: 24px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  #icon img{
+    display: block;
+    margin: auto;
+  }
+
+  #title{
+    display: inline;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .blocks{
+    display: block;
+  }
+
+  .block{
+    display: block;
+    margin: auto;
+    width: 250px;
+    margin-bottom: 50px;
+  }
+
+}
