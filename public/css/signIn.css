@@ -4,10 +4,13 @@
 /* Ids */
 
 #card{
+  display: block;
   margin: auto;
-  width: 400px;
+  width: auto;
   height: auto;
   padding: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
   background: white;
   box-shadow: 0px 0px 20px 5px #e2e2e2;
   border: 2px solid #e2e2e2;
@@ -21,7 +24,7 @@
 }
 
 #card form{
-  display: block;
+
 }
 
 #card input[type=email], input[type=password]{
@@ -30,15 +33,17 @@
   margin-top: 25px;
   margin-bottom: 25px;
   padding: 10px;
-  font-size: 28px;
+  font-size: 22px;
   border: 1px solid #e2e2e2;
   border-radius: 5px;
+  width: 350px;
 }
 
 #card button[type=submit]{
   display: block;
   margin: auto;
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 #card button[type=submit]:hover{
@@ -51,7 +56,11 @@
 }
 
 #card a{
-  margin-left: 40px;
+  font-size: 18px;
+}
+
+#createAccount{
+  display: block;
   text-align: center;
 }
 
