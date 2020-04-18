@@ -47,8 +47,19 @@ button{
   transition: 0.5s;
 }
 
+input{
+  border: 1px solid #e2e2e2;
+  transition: 0.5s;
+}
+
 button:focus{
   outline: none;
+  border-color: #72a4f7;
+}
+
+input:focus{
+  outline: none;
+  border-color: #72a4f7;
 }
 
 i{
