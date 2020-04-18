@@ -24,10 +24,6 @@
   margin-bottom: 30px;
 }
 
-#card form{
-
-}
-
 #card input[type=email], input[type=password]{
   display: block;
   margin: auto;
