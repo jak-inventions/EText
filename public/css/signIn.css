@@ -6,7 +6,8 @@
 #card{
   margin: auto;
   width: 400px;
-  height: 450px;
+  height: auto;
+  padding: 25px;
   background: white;
   box-shadow: 0px 0px 20px 5px #e2e2e2;
   border: 2px solid #e2e2e2;
@@ -16,10 +17,11 @@
 #card h1{
   font-size: 32px;
   text-align: center;
+  margin: 0px;
 }
 
 #card form{
-
+  display: block;
 }
 
 #card input[type=email], input[type=password]{
@@ -31,6 +33,26 @@
   font-size: 28px;
   border: 1px solid #e2e2e2;
   border-radius: 5px;
+}
+
+#card button[type=submit]{
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+}
+
+#card button[type=submit]:hover{
+  background: white;
+}
+
+#card button[type=submit]:active{
+  background: #e0e0e0;
+  border-color: #c9c9c9;
+}
+
+#card a{
+  margin-left: 40px;
+  text-align: center;
 }
 
 /* Classes */

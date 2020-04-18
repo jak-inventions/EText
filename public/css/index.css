@@ -10,6 +10,25 @@
 
 /* Classes */
 
+.un {
+  display: inline-block;
+}
+
+.un:after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  display: block;
+  margin: auto;
+  margin-top: 4px;
+  background: white;
+  transition: 0.3s;
+}
+
+.un:hover:after {
+  width: 100%;
+}
+
 /* Tags */
 
 body{
