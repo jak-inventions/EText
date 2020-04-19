@@ -3,45 +3,6 @@
 
 /* Ids */
 
-#icon{
-  margin-left: 25px;
-  display: inline;
-}
-
-#icon img{
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  vertical-align: middle;
-  border-radius: 20px;
-}
-
-#title{
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 125%;
-  margin-left: 25px;
-}
-
-#menu{
-  float: right;
-  margin-top: 30px;
-  margin-right: 20px;
-}
-
-#menu a,button{
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-size: 32px;
-  text-decoration: none;
-  color: white;
-}
-
-#menu a:active.un:after{
-  width: 50%;
-}
-
 /* Classes */
 
 .headline{
@@ -109,48 +70,11 @@
 
 /* Tags */
 
-header{
-  border-bottom: 1px solid #e2e2e2;
-  display: inline-block;
-  width: 100vw;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background: #303030;
-}
-
-header *{
-  color: white;
-}
-
 /* Other */
 
 /* Mobile */
 
 @media (max-width: 850px) {
-
-  #menu{
-    float: none;
-    margin: 0px;
-    margin-top: 25px;
-    text-align: center;
-  }
-
-  #menu a{
-    font-size: 24px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
-  #icon img{
-    display: block;
-    margin: auto;
-  }
-
-  #title{
-    display: inline;
-    margin: 0px;
-    text-align: center;
-  }
 
   .blocks{
     display: block;
@@ -161,10 +85,6 @@ header *{
     margin: auto;
     width: 250px;
     margin-bottom: 50px;
-  }
-
-  #menu a:active.un:after{
-    width: 100%;
   }
 
 }

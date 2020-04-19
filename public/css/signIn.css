@@ -5,7 +5,6 @@
 
 #card{
   margin: auto;
-  margin-top: -100px;
   width: auto;
   height: auto;
   padding: 25px;
@@ -80,6 +79,11 @@ body{
   height: 100%;
 }
 
+header{
+  position: absolute;
+  top: 0px;
+}
+
 /* Mobile */
 
 @media (max-width: 850px) {
@@ -87,6 +91,7 @@ body{
   #card{
     padding-left: 25px;
     padding-right: 25px;
+    margin-top: 250px;
   }
 
   #card input[type=email], input[type=password]{
