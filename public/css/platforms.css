@@ -1,9 +1,15 @@
-
 /* Fonts */
 
 /* Ids */
 
 /* Classes */
+
+.block button{
+  font-size: 18px;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+}
 
 /* Tags */
 

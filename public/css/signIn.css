@@ -43,15 +43,6 @@
   margin-bottom: 25px;
 }
 
-#card button[type=submit]:hover{
-  background: white;
-}
-
-#card button[type=submit]:active{
-  background: #e0e0e0;
-  border-color: #c9c9c9;
-}
-
 #card form a{
   font-size: 18px;
 }

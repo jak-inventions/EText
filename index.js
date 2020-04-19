@@ -22,7 +22,7 @@ app.get('/messaging', function(req, res){
 });
 
 app.get('/platforms', function(req, res){
-  res.send('Platforms');
+  res.render('Platforms');
 });
 
 app.get('/signIn', function(req, res){
