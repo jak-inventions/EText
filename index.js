@@ -18,11 +18,11 @@ app.get('/', function(req, res){
 });
 
 app.get('/messaging', function(req, res){
-  res.send('Messaging');
+  res.send('messaging');
 });
 
 app.get('/platforms', function(req, res){
-  res.render('Platforms');
+  res.render('platforms');
 });
 
 app.get('/signIn', function(req, res){
