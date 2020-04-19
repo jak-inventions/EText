@@ -4,7 +4,9 @@
 /* Ids */
 
 #card{
+  display: inline-block;
   margin: auto;
+  margin-top: 50px;
   width: auto;
   height: auto;
   padding: 25px;
@@ -65,16 +67,10 @@
 
 /* Other */
 
-body{
+main{
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100%;
-}
-
-header{
-  position: absolute;
-  top: 0px;
+  align-items: center;
 }
 
 /* Mobile */
@@ -84,7 +80,6 @@ header{
   #card{
     padding-left: 25px;
     padding-right: 25px;
-    margin-top: 250px;
   }
 
   #card input[type=email], input[type=password]{

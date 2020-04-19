@@ -68,6 +68,16 @@
   width: 100%;
 }
 
+.mobileOnly{
+  display: none;
+}
+
+.divider{
+  display: inline;
+  font-size: 32px;
+  cursor: default;
+}
+
 /* Tags */
 
 body{
@@ -118,6 +128,18 @@ header *{
   color: white;
 }
 
+hr.small{
+  width: 25%;
+}
+
+hr.medium{
+  width: 50%;
+}
+
+hr.large{
+  width: 75%;
+}
+
 /* Other */
 
 *{
@@ -156,6 +178,10 @@ header *{
     display: inline;
     margin: 0px;
     text-align: center;
+  }
+
+  .mobileOnly{
+    display: block;
   }
 
 }
