@@ -184,4 +184,8 @@ hr.large{
     display: block;
   }
 
+  *{
+    -webkit-tap-highlight-color: transparent;
+  }
+
 }
