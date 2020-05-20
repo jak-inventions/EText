@@ -1,5 +1,4 @@
-ToDo
+To Do
 -Sign in
 -Sign up
 -Forgot password
--Export to Platforms
