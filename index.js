@@ -26,5 +26,5 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  res.send('EText');
+  res.send('<h1>EText</h1><h2>Formal yet efficient</h2>');
 });
