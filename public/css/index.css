@@ -1,0 +1,22 @@
+
+/* Ids */
+
+/* Classes */
+
+/* Tags */
+
+body{
+  background-color: #f4f4f4;
+}
+
+/* Other */
+
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+*:not(strong){
+  font-weight: normal;
+}
+
+/* Mobile */

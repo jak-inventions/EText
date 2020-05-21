@@ -19,12 +19,12 @@ app.use(express.static('public'));
 
 // Routers
 app.use(uiRouter);
-app.use(authRouter);
+app.use('/api/user/', authRouter);
 
 app.listen(port, () => {
   console.log(`Running on port ${port}`);
 });
 
 app.get('/', (req, res) => {
-  res.send('<h1>EText</h1><h2>Formal yet efficient</h2>');
+  res.redirect('/login');
 });

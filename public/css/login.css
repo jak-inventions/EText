@@ -1,0 +1,50 @@
+
+/* Ids */
+
+#icon{
+  width: 90px;
+  height: 90px;
+  display: inline;
+  vertical-align: middle;
+}
+
+#title{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 100%;
+}
+
+#title h1{
+  font-size: 26px;
+}
+
+#title h2{
+  font-size: 20px;
+}
+
+/* Classes */
+
+/* Tags */
+
+header{
+  background-color: #6f68e4;
+  color: white;
+  display: inline-block;
+  width: 100vw;
+}
+
+header .left{
+  float: left;
+}
+
+header .right{
+  float: right;
+}
+
+body{
+  margin: 0px;
+}
+
+/* Other */
+
+/* Mobile */
