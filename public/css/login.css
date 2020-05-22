@@ -83,18 +83,8 @@ hr{
 
 hr.small{
   width: 25%;
-  animation: grow 1s ease-out;
 }
 
 /* Other */
-
-@keyframes grow {
-  from{
-    width: 0%;
-  }
-  to{
-    width: 25%;
-  }
-}
 
 /* Mobile */
