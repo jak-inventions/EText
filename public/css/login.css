@@ -7,7 +7,7 @@
   background: white;
   border: 1px solid #e6e6e6;
   border-radius: 15px;
-  display: inline-block;
+  display: block;
   padding-top: 25px;
   padding-bottom: 25px;
 }
@@ -52,12 +52,12 @@
 
 #loginDialogue a{
   color: #303030;
-  text-decoration: none;
+  text-decoration: underline;
   transition: 0.25s color, 0.25s text-decoation-color;
 }
 
 #loginDialogue a:hover{
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #loginDialogue a:active{
@@ -77,11 +77,8 @@
 #createAccount{
   display: inline-block;
   width: 100%;
-}
-
-#createAccount a{
-  display: inline;
   text-align: center;
+  margin-top: 15px;
 }
 
 /* Classes */
