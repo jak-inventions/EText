@@ -10,6 +10,8 @@
   display: block;
   padding-top: 25px;
   padding-bottom: 25px;
+  margin: auto;
+  margin-top: 100px;
 }
 
 #loginDialogue h1{
@@ -22,11 +24,6 @@
   margin: auto;
   margin-top: 25px;
   margin-bottom: 0px;
-  border: 1px solid #e6e6e6;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 18px;
-  transition: 0.25s border-color, 0.25s background-color;
 }
 
 #loginDialogue input{
@@ -81,14 +78,45 @@
   margin-top: 15px;
 }
 
+#icon{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#title{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 100%;
+}
+
+#title h1{
+  font-size: 28px;
+}
+
+#title h2{
+  font-size: 20px;
+}
+
+#menu{
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Classes */
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
 
 /* Tags */
 
 main{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 }
 
@@ -100,6 +128,25 @@ hr.small{
   width: 25%;
 }
 
+header{
+  display: inline-block;
+  width: 100%;
+  background-color: #6f68e4;
+  color: white;
+}
+
 /* Other */
 
 /* Mobile */
+
+@media (max-width: 850px) {
+
+  #loginDialogue{
+    width: 350px;
+  }
+
+  #loginDialogue input{
+    font-size: 16px;
+  }
+
+}
