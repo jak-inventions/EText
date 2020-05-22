@@ -61,17 +61,25 @@
   color: #1a73e8;
 }
 
-#forgotPassword{
-  display: inline-block;
-  margin-top: 15px;
-  margin-left: 50px;
+#name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-#createAccount{
+#name input{
   display: inline-block;
+  width: 37.5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+#login{
+  display: block;
+  margin-top: 20px;
   width: 100%;
   text-align: center;
-  margin-top: 20px;
 }
 
 /* Classes */

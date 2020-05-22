@@ -1,6 +1,32 @@
 
 /* Ids */
 
+#icon{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#title{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 100%;
+}
+
+#title h1{
+  font-size: 28px;
+}
+
+#title h2{
+  font-size: 20px;
+}
+
+#menu{
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Classes */
 
 /* Tags */
@@ -8,6 +34,21 @@
 body{
   background-color: #f4f4f4;
   margin: 0px;
+}
+
+header{
+  display: inline-block;
+  width: 100%;
+  background-color: #6f68e4;
+  color: white;
+}
+
+header .left{
+  float: left;
+}
+
+header .right{
+  float: right;
 }
 
 button{

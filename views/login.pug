@@ -20,14 +20,13 @@ body
         //a Thing 1
         //a Thing 2
   main
-    article#loginDialogue
+    form(action='/api/user/login' method='POST')#loginDialogue
       h1 Login
       hr.small
-      form(action='/api/user/login' method='POST')
-        input(type='email' name='email' placeholder='Email')
-        input(type='password' name='password' placeholder='Password')
-        a(href='/forgotPassword')#forgotPassword Forgot password
-        button(type='submit') Login
-        span#createAccount
-          a(href='/register') Create an account
+      input(type='email' name='email' placeholder='Email')
+      input(type='password' name='password' placeholder='Password')
+      a(href='/forgotPassword')#forgotPassword Forgot password
+      button(type='submit') Login
+      span#createAccount
+        a(href='/register') Create an account
   footer
