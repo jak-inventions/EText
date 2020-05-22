@@ -16,6 +16,10 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
+*:focus{
+  outline: none;
+}
+
 *:not(strong){
   font-weight: normal;
 }
