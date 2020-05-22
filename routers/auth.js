@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const nodemailer = require('nodemailer');
 const async = require('async');
 var crypto = require("crypto");
-const User = require('../model/User');
+const User = require('../models/User');
 const verify = require('./verifyToken');
 const {registerValidation, loginValidation} = require('../validation.js');
 
