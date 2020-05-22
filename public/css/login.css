@@ -50,20 +50,38 @@
   border-color: #b5b5b5;
 }
 
-#forgotPassword{
-  display: inline-block;
+#loginDialogue a{
   color: #303030;
-  margin-top: 15px;
-  margin-left: 50px;
-  transition: 0.25s color;
+  text-decoration: none;
+  transition: 0.25s color, 0.25s text-decoation-color;
 }
 
-#forgotPassword:active{
+#loginDialogue a:hover{
+  text-decoration: underline;
+}
+
+#loginDialogue a:active{
   color: #1a73e8;
 }
 
-#forgotPassword:focus{
-  text-decoration-color: #1a73e8;
+#loginDialogue form{
+  margin: 0px;
+}
+
+#forgotPassword{
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+#createAccount{
+  display: inline-block;
+  width: 100%;
+}
+
+#createAccount a{
+  display: inline;
+  text-align: center;
 }
 
 /* Classes */
