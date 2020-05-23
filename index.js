@@ -30,6 +30,7 @@ mongoose.connect(
 // Middleware
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
 
 // Routers
 app.use(uiRouter);
@@ -40,5 +41,13 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  res.redirect('/login');
+  const token = req.cookies['auth-token'];
+  if(!token) return res.redirect('/login');
+  try {
+    const verified = jwt.verify(token, process.env.TOKEN_SECRET);
+    res.redirect('/messaging');
+  }
+  catch (e) {
+    res.redirect('/login');
+  }
 });

@@ -14,9 +14,16 @@ app.use(cookieParser());
 
 // Register
 router.post('/register', async (req, res) => {
-  // Validates the data before creating a user
-  const {error} = registerValidation(req.body);
-  if(error) return res.status(400).send(error.details[0].message);
+  if(req.body.password == req.body.confirm){
+    // Validates the data before creating a user
+    delete req.body.confirm;
+    const {error} = registerValidation(req.body);
+    if(error) return res.status(400).send(error.details[0].message);
+  }
+  else{
+    res.redirect('/register');
+    console.log(`Passwords don't match`);
+  }
 
   // Checking if user is already in the database
   const emailExists = await User.findOne({email: req.body.email});
@@ -28,7 +35,8 @@ router.post('/register', async (req, res) => {
 
   // Creates a new user
   const user = new User({
-    name: req.body.name,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
     password: hashedPassword
   });
@@ -59,7 +67,7 @@ router.post('/login', async (req, res) => {
 
   // Create and assign a token
   const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
-  res.cookie('auth-token', token).redirect('/home');
+  res.cookie('auth-token', token).redirect('/message');
   //res.header('auth-token', token).send(token);
 });
 

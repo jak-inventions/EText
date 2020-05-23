@@ -4,8 +4,11 @@ const Joi = require('@hapi/joi');
 // Register Validation
 const registerValidation = (data) => {
   const schema = {
-    name: Joi.string()
-      .min(6)
+    firstName: Joi.string()
+      .min(2)
+      .required(),
+    lastName: Joi.string()
+      .min(2)
       .required(),
     email: Joi.string()
       .min(6)

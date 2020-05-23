@@ -1,5 +1,10 @@
 const express = require('express');
+const verify = require('./verifyToken.js');
 const router = express.Router();
+
+router.get('/messaging', verify, (req, res) => {
+  res.render('messaging');
+});
 
 router.get('/login', (req, res) => {
   res.render('login');
