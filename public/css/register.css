@@ -1,66 +1,6 @@
 
 /* Ids */
 
-#loginDialogue{
-  width: 500px;
-  height: auto;
-  background: white;
-  border: 1px solid #e6e6e6;
-  border-radius: 15px;
-  display: block;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin: auto;
-  margin-top: 100px;
-}
-
-#loginDialogue h1{
-  text-align: center;
-  margin-top: 0px;
-}
-
-#loginDialogue input,button{
-  display: block;
-  margin: auto;
-  margin-top: 25px;
-  margin-bottom: 0px;
-}
-
-#loginDialogue input{
-  width: 80%;
-}
-
-#loginDialogue input:focus{
-  border-color: #1a73e8;
-}
-
-#loginDialogue button:focus{
-  border-color: #1a73e8;
-}
-
-#loginDialogue button:hover{
-  background-color: white;
-}
-
-#loginDialogue button:active{
-  background-color: #e6e6e6;
-  border-color: #b5b5b5;
-}
-
-#loginDialogue a{
-  color: #303030;
-  text-decoration: underline;
-  transition: 0.25s color, 0.25s text-decoation-color;
-}
-
-#loginDialogue a:hover{
-  text-decoration: none;
-}
-
-#loginDialogue a:active{
-  color: #1a73e8;
-}
-
 #name{
   display: flex;
   align-items: center;

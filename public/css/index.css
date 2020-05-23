@@ -27,6 +27,66 @@
   vertical-align: middle;
 }
 
+#dialogue{
+  width: 500px;
+  height: auto;
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 15px;
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+#dialogue h1{
+  text-align: center;
+  margin-top: 0px;
+}
+
+#dialogue input,button{
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+#dialogue input{
+  width: 80%;
+}
+
+#dialogue input:focus{
+  border-color: #1a73e8;
+}
+
+#dialogue button:focus{
+  border-color: #1a73e8;
+}
+
+#dialogue button:hover{
+  background-color: white;
+}
+
+#dialogue button:active{
+  background-color: #e6e6e6;
+  border-color: #b5b5b5;
+}
+
+#dialogue a{
+  color: #303030;
+  text-decoration: underline;
+  transition: 0.25s color, 0.25s text-decoation-color;
+}
+
+#dialogue a:hover{
+  text-decoration: none;
+}
+
+#dialogue a:active{
+  color: #1a73e8;
+}
+
 /* Classes */
 
 /* Tags */
