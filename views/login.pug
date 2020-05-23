@@ -15,10 +15,9 @@ body
       span#title
         h1 EText
         h2 Formal, yet efficient
-    div.right
+    div.right.desktopOnly
       span#menu
-        //a Thing 1
-        //a Thing 2
+        a(href='/register').un Register
   main
     form(action='/api/user/login' method='POST')#dialogue
       h1 Login

@@ -25,6 +25,17 @@
 #menu{
   display: inline-block;
   vertical-align: middle;
+  font-size: 24px;
+  margin: 30px;
+}
+
+#menu a{
+  color: white;
+  text-decoration: none;
+}
+
+#menu a:active.un:after{
+  width: 50%;
 }
 
 #dialogue{
@@ -88,6 +99,33 @@
 }
 
 /* Classes */
+
+.un{
+  display: inline-block;
+}
+
+.un:after{
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  margin: auto;
+  margin-top: 4px;
+  background: white;
+  transition: 0.3s;
+}
+
+.un:hover:after{
+  width: 100%;
+}
+
+.desktopOnly{
+  display: inherit;
+}
+
+.mobileOnly{
+  display: none;
+}
 
 /* Tags */
 
@@ -161,12 +199,33 @@ hr.small{
 
 @media (max-width: 850px) {
 
+  #icon{
+    width: 75px;
+    height: 75px;
+  }
+
+  #title h1{
+    font-size: 26px;
+  }
+
+  #title h2{
+    font-size: 18px;
+  }
+
   #dialogue{
     width: 350px;
   }
 
   #dialogue input{
     font-size: 16px;
+  }
+
+  .desktopOnly{
+    display: none;
+  }
+
+  .mobileOnly{
+    display: inherit;
   }
 
 }
