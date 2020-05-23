@@ -123,6 +123,26 @@ input,button{
   transition: 0.25s border-color, 0.25s background-color;
 }
 
+hr{
+  border: 1px solid #e6e6e6;
+}
+
+hr.full{
+  width: 100%;
+}
+
+hr.large{
+  width: 75%;
+}
+
+hr.medium{
+  width: 50%;
+}
+
+hr.small{
+  width: 25%;
+}
+
 /* Other */
 
 *{
@@ -138,3 +158,15 @@ input,button{
 }
 
 /* Mobile */
+
+@media (max-width: 850px) {
+
+  #dialogue{
+    width: 350px;
+  }
+
+  #dialogue input{
+    font-size: 16px;
+  }
+
+}
