@@ -1,5 +1,5 @@
 head
-  title EText | Login
+  title EText | Reset password
   link(rel='shortcut icon' href='img/icon.png')
   meta(name='viewport' content='width=device-width, user-scalable=no')
   // CSS Imports
@@ -19,7 +19,7 @@ body
       span#menu
         a(href='/login').un Login
   main
-    form(action='/api/user/forgotPassword' method='POST')#dialogue
+    form(action='/api/user/reset' method='POST')#dialogue
       h1 New password
       hr.medium
       input(type='password' name='password' placeholder='New password')
