@@ -6,6 +6,9 @@ const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
+// Middleware Imports
+const checkAuth = require('./middleware/checkAuth.js');
+
 // Router Imports
 const uiRouter = require('./routers/ui.js');
 const authRouter = require('./routers/auth.js');
@@ -40,14 +43,6 @@ app.listen(port, () => {
   console.log(`Running on port ${port}`);
 });
 
-app.get('/', (req, res) => {
-  const token = req.cookies['auth-token'];
-  if(!token) return res.redirect('/login');
-  try {
-    const verified = jwt.verify(token, process.env.TOKEN_SECRET);
-    res.redirect('/messaging');
-  }
-  catch (e) {
-    res.redirect('/login');
-  }
+app.get('/', checkAuth, (req, res) => {
+  res.redirect('/login');
 });

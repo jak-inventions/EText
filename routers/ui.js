@@ -1,6 +1,7 @@
 const express = require('express');
 const verify = require('./verifyToken.js');
 const router = express.Router();
+const checkAuth = require('../middleware/checkAuth.js');
 
 router.get('/messaging', verify, (req, res) => {
   res.render('messaging');
