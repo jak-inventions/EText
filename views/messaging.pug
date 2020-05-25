@@ -15,9 +15,9 @@ body
       span#title
         h1 EText
         h2 Formal, yet efficient
-    div.right.desktopOnly
+    form(action='api/user/logout' method='POST').right.desktopOnly
       span#menu
-        a(href='/register').un Register
+        button(type='submit').un.menuButton Logout
   main
   form#dialogue
     h1 messaging

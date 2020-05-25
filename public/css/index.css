@@ -32,6 +32,7 @@
 #menu a{
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 #menu a:active.un:after{
@@ -127,6 +128,19 @@
   display: none;
 }
 
+.menuButton{
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+}
+
+.menuButton:active.un:after{
+  width: 50%;
+}
+
 /* Tags */
 
 body{
@@ -179,6 +193,10 @@ hr.medium{
 
 hr.small{
   width: 25%;
+}
+
+form{
+  margin: 0px;
 }
 
 /* Other */
