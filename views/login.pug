@@ -28,4 +28,10 @@ body
       button(type='submit') Login
       span#createAccount
         a(href='/register') Create an account
+    if message
+      div.message.red
+        | #{message.text}
+        a(onclick='deleteMessage(this)')
+          strong X
   footer
+    script(src='/js/index.js')

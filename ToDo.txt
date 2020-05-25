@@ -1,4 +1,3 @@
 To Do
--Sign in
--Sign up
--Forgot password
+-messages (wrong password, invalid email, etc.)
+-messaging between users

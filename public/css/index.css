@@ -141,6 +141,28 @@
   width: 50%;
 }
 
+.message{
+  margin: auto;
+  margin-top: 25px;
+  width: 460px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.message.red{
+  background-color: #ff6161;
+  border-color: #b04141;
+  color: white;
+}
+
+.message a{
+  float: right;
+  cursor: pointer;
+}
+
 /* Tags */
 
 body{
