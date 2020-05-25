@@ -29,3 +29,14 @@
 /* Other */
 
 /* Mobile */
+
+@media (max-width: 850px) {
+
+  #name input{
+    display: inline-block;
+    width: 42.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+}

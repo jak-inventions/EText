@@ -50,6 +50,7 @@
   padding-bottom: 30px;
   margin: auto;
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 #dialogue h1{
@@ -253,11 +254,12 @@ form{
   }
 
   #dialogue{
-    width: 350px;
+    width: 300px;
   }
 
   #dialogue input{
     font-size: 16px;
+    width: 90%;
   }
 
   .desktopOnly{
