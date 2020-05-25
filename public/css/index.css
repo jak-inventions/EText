@@ -108,7 +108,7 @@
 .un:after{
   content: '';
   width: 0px;
-  height: 1px;
+  height: 2px;
   display: block;
   margin: auto;
   margin-top: 4px;
@@ -266,6 +266,10 @@ form{
 
   .mobileOnly{
     display: inherit;
+  }
+
+  .message{
+    width: 350px;
   }
 
 }

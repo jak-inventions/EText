@@ -1,6 +1,24 @@
 
 /* Ids */
 
+#dashboard{
+  margin: auto;
+  width: 100vw;
+}
+
+#contacts{
+  display: inline-block;
+  background: green;
+  width: 250px;
+  height: 500px;
+}
+
+#conversation{
+  display: inline-block;
+  background: blue;
+  height: 500px;
+}
+
 /* Classes */
 
 /* Tags */
