@@ -1,3 +1,4 @@
 To Do
 -messages (wrong password, invalid email, etc.)
 -messaging between users
+-email verification
