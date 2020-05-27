@@ -1,22 +1,23 @@
 
 /* Ids */
 
-#dashboard{
-  margin: auto;
-  width: 100vw;
+#dialogue{
+  width: 1000px;
+  height: 500px;
+  padding: 0;
 }
 
 #contacts{
   display: inline-block;
-  background: green;
-  width: 250px;
-  height: 500px;
+  width: 199px;
+  height: 100%;
+  border-right: 1px solid #e6e6e6;
 }
 
 #conversation{
   display: inline-block;
-  background: blue;
-  height: 500px;
+  width: 800px;
+  height: 100%;
 }
 
 /* Classes */
