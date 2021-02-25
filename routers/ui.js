@@ -35,8 +35,9 @@ router.get('/forgotPassword', (req, res) => {
 router.get('/reset/:token', (req, res) => {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
     if (!user) {
-      console.log('Password reset token is invalid or has expired.');
-      return res.redirect('/');
+      return res
+        .cookie('message', 'Password reset token is invalid or has expired.')
+        .redirect('/');
     }
     res.render('reset', {token: req.params.token});
   });
