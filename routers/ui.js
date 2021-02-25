@@ -1,24 +1,35 @@
 const express = require('express');
+const app = express();
 const verify = require('./verifyToken.js');
 const router = express.Router();
 const checkAuth = require('../middleware/checkAuth.js');
 const User = require('../models/User.js');
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+
+
+app.use(cookieParser());
 
 router.get('/messaging', verify, (req, res) => {
   res.render('messaging');
 });
 
 router.get('/login', (req, res) => {
-  res.render('login');
+  //Check to see if user is already signed in
+  let token = req.cookies['auth-token'];
+  if(token && jwt.verify(token, process.env.TOKEN_SECRET)){
+    return res.redirect('/messaging');
+  }
+  return res.render('login');
 });
 
 router.get('/register', (req, res) => {
-  res.render('register');
+  //Check to see if user is already signed in
+  return res.render('register');
 });
 
 router.get('/forgotPassword', (req, res) => {
-  // ToDo
-  res.render('forgotPassword');
+  return res.render('forgotPassword');
 });
 
 router.get('/reset/:token', (req, res) => {

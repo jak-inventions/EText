@@ -81,9 +81,10 @@
   width: 50%;
 }
 
-.message{
-  margin: auto;
-  margin-top: 25px;
+#message{
+  position: absolute;
+  bottom: 25px;
+  left: 50%-230px;
   width: 460px;
   padding: 20px;
   background-color: white;
@@ -92,13 +93,13 @@
   font-size: 18px;
 }
 
-.message.red{
+#message.red{
   background-color: #ff6161;
   border-color: #b04141;
   color: white;
 }
 
-.message a{
+#message a{
   float: right;
   cursor: pointer;
 }

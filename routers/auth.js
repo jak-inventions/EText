@@ -18,16 +18,27 @@ router.post('/register', async (req, res) => {
     // Validates the data before creating a user
     delete req.body.confirm;
     const {error} = registerValidation(req.body);
-    if(error) return res.status(400).send(error.details[0].message);
+    if(error){
+      return res
+        .status(400)
+        .cookie('message', 'Error: ' + error.details[0].message)
+        .redirect('/login');
+    }
   }
   else{
-    res.redirect('/register');
-    console.log(`Passwords don't match`);
+    return res
+      .cookie('message', "Passwords don't match")
+      .redirect('/register');
   }
 
   // Checking if user is already in the database
   const emailExists = await User.findOne({email: req.body.email});
-  if(emailExists) return res.status(400).send('Email already exists');
+  if(emailExists){
+    return res
+      .status(400)
+      .cookie('message', 'Email already has an account')
+      .redirect('/register');
+  }
 
   // Hash the password
   const salt = await bcrypt.genSalt(10);
@@ -43,10 +54,15 @@ router.post('/register', async (req, res) => {
   try{
     const savedUser = await user.save();
     //res.send({user: user.id});
-    res.redirect('/login');
+    res
+      .cookie('message', 'Account created')
+      .redirect('/login');
   }
   catch(err){
-    res.status(400).send(err);
+    res
+      .status(400)
+      .cookie('message', 'Error: ' + err)
+      .redirect('/');
   }
 
 });
@@ -55,28 +71,46 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   // Validates the data before logging in a user
   const {error} = loginValidation(req.body);
-  if(error) return res.status(400).send(error.details[0].message);
+  if(error){
+    return res
+      .status(400)
+      .cookie('message', 'Error: ' + error.details[0].message)
+      .redirect('/login');
+  }
 
   // Checking if user is already in the database
   const user = await User.findOne({email: req.body.email});
-  if(!user) return res.status(400).send('Email not found');
+  if(!user){
+    return res
+      .status(400)
+      .cookie('message', 'Email not found')
+      .redirect('/login');
+  }
 
   // Check if password is correct
   const validPass = await bcrypt.compare(req.body.password, user.password);
   if(!validPass){
-    return res.status(400).send('Invalid password');
+    return res
+      .status(400)
+      .cookie('message', 'Invalid password')
+      .redirect('/login');
   }
 
   // Create and assign a token
   const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
-  res.cookie('auth-token', token).redirect('/messaging');
+  return res
+    .cookie('auth-token', token)
+    .cookie('message', 'Successfully logged out')
+    .redirect('/messaging');
   //res.header('auth-token', token).send(token);
-  return;
 });
 
 // Logout
 router.post('/logout', (req, res) => {
-  res.cookie('auth-token', '').redirect('/login');
+  return res
+    .cookie('auth-token', '')
+    .cookie('message', 'Successfully logged out')
+    .redirect('/login');
 });
 
 router.post('/delete', verify, async (req, res) => {
@@ -84,13 +118,23 @@ router.post('/delete', verify, async (req, res) => {
   try{
     // Checking if user is already in the database
     const user = await User.deleteOne({_id: req.user._id});
-    if(!user) return res.status(400).send("User doesn't exits");
-    res.cookie('auth-token', '').redirect('/');
+    if(!user){
+      return res
+        .status(400)
+        .cookie('message', "User doesn't exits")
+        .redirect('/');
+    }
+    return res
+      .cookie('auth-token', '')
+      .cookie('message', 'User deleted')
+      .redirect('/');
   }
   catch(err){
-    res.status(400).send(err);
+    return res
+      .status(400)
+      .cookie('message', 'Error: ' + err)
+      .redirect('/');
   }
-  res.send('ToDo');
 });
 
 // Sends Password Reset Email
@@ -105,8 +149,10 @@ router.post('/forgotPassword', (req, res) => {
     function(token, done) {
       User.findOne({ email: req.body.email }, function(err, user) {
         if (!user) {
-          console.log('No account with that email address exists.');
-          return res.redirect('/forgotPassword');
+          return res
+            .cookie('message', 'No account with that email address exists.')
+            .status(400)
+            .redirect('/forgotPassword');
         }
 
         user.resetPasswordToken = token;
@@ -135,15 +181,18 @@ router.post('/forgotPassword', (req, res) => {
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
-        console.log('mail sent');
-        console.log('An e-mail has been sent to ' + user.email + ' with further instructions.');
         done(err, 'done');
       });
     }
   ], function(err) {
-    if (err) res.send(err);
-    res.redirect('/');
-    return;
+    if (err){
+      return res
+        .cookie('message', err)
+        .redirect('/');
+    }
+    return res
+      .cookie('message', 'Password reset email sent')
+      .redirect('/');
   });
 });
 
@@ -153,8 +202,9 @@ router.post('/reset/:token', function(req, res) {
     function(done) {
       User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, async function(err, user) {
         if (!user) {
-          console.log('Password reset token is invalid or has expired.');
-          return res.redirect('/');
+          return res
+            .cookie('message', 'Password reset token is invalid or has expired.')
+            .redirect('/');
         }
         if(req.body.password === req.body.confirm) {
           // Hash the new password
@@ -170,8 +220,9 @@ router.post('/reset/:token', function(req, res) {
           });
         }
         else {
-            console.log("Passwords do not match.");
-            return res.redirect('back');
+            return res
+              .cookie('message', 'Passwords do not match.')
+              .redirect('/reset/' + req.params['token']);
         }
       });
     },
@@ -179,24 +230,25 @@ router.post('/reset/:token', function(req, res) {
       var smtpTransport = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-          user: 'noreply.jakinventions@gmail.com',
+          user: 'noreply.protosapps@gmail.com',
           pass: process.env.GMAILPW
         }
       });
       var mailOptions = {
         to: user.email,
-        from: 'noreply.jakinventions@gmail.com',
+        from: 'noreply.protosapps@gmail.com',
         subject: 'Your password has been changed',
         text: 'Hello,\n\n' +
           'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
-        console.log('Success! Your password has been changed.');
         done(err);
       });
     }
   ], function(err) {
-    res.redirect('/');
+    res
+      .cookie('message', 'Your password has been changed')
+      .redirect('/');
   });
 });
 

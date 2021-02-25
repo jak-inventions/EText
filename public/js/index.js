@@ -1,4 +1,4 @@
 
 function deleteMessage(ele){
-  ele.parentElement.remove();
+  document.getElementById('message').remove();
 }

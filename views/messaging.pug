@@ -9,20 +9,11 @@ head
   link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap')
 body
   header
-    div.left
-      a(href='/')
-        img(src='/img/icon-clear.png')#icon
-      span#title
-        h1 EText
-        h2 Formal, yet efficient
-    form(action='api/user/logout' method='POST').right.desktopOnly
-      span#menu
-        button(type='submit').un.menuButton Logout
+    
   main
-    section#dialogue
-      div#contacts
-        
-      div#conversation
+    | Now you're logged in 
+    form(action='api/user/logout' method='POST')
+      button(type='submit') Logout
         
         
   footer
