@@ -2,15 +2,10 @@
 /* Ids */
 
 #forgotPassword{
-  display: inline-block;
   margin-top: 15px;
-  margin-left: 50px;
 }
 
 #createAccount{
-  display: inline-block;
-  width: 100%;
-  text-align: center;
   margin-top: 20px;
 }
 

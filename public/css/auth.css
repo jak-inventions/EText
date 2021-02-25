@@ -1,0 +1,100 @@
+/* For: login.pug, register.pug, forgot.pug, & reset.pug */
+
+/* Ids */
+
+/* Classes */
+
+/* Tags */
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+header img{
+  width: 150px;
+  height: 150px;
+  opacity: 0.25;
+}
+
+main{
+  display: inline-block;
+  width: 500px;
+  height: auto;
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 15px;
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+main form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1{
+  text-align: center;
+  margin-top: 0px;
+}
+
+main input,button{
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+main input{
+  width: 80%;
+}
+
+main input:focus{
+  border-color: #1a73e8;
+}
+
+main button:focus{
+  border-color: #1a73e8;
+}
+
+main button:hover{
+  background-color: white;
+}
+
+main button:active{
+  background-color: #e6e6e6;
+  border-color: #b5b5b5;
+}
+
+main a{
+  color: #303030;
+  text-decoration: underline;
+  transition: 0.25s color, 0.25s text-decoation-color;
+}
+
+main a:hover{
+  text-decoration: none;
+}
+
+main a:active{
+  color: #1a73e8;
+}
+
+/* Other */
+
+/* Mobile */
+
+
