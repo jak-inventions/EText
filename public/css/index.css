@@ -94,9 +94,15 @@
 }
 
 #message.red{
-  background-color: #ff6161;
+  background-color: white;
   border-color: #b04141;
-  color: white;
+  color: #ff6161;
+}
+
+#message.green{
+  background-color: white;
+  border-color: darkgreen;
+  color: green;
 }
 
 #message a{
