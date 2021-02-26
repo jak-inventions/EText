@@ -21,13 +21,19 @@ router.post('/register', async (req, res) => {
     if(error){
       return res
         .status(400)
-        .cookie('message', 'Error: ' + error.details[0].message)
+        .cookie('message', JSON.stringify({
+          text: 'Error: ' + error.details[0].message,
+          color: 'red'
+        }))
         .redirect('/register');
     }
   }
   else{
     return res
-      .cookie('message', "Passwords don't match")
+      .cookie('message', JSON.stringify({
+        text: "Passwords don't match",
+        color: 'red'
+      }))
       .redirect('/register');
   }
 
@@ -36,7 +42,10 @@ router.post('/register', async (req, res) => {
   if(emailExists){
     return res
       .status(400)
-      .cookie('message', 'Email already has an account')
+      .cookie('message', JSON.stringify({
+        text: 'Email already has an account',
+        color: 'red'
+      }))
       .redirect('/register');
   }
 
@@ -55,13 +64,19 @@ router.post('/register', async (req, res) => {
     const savedUser = await user.save();
     //res.send({user: user.id});
     res
-      .cookie('message', 'Account created')
+      .cookie('message', JSON.stringify({
+        text: 'Account created',
+        color: 'green'
+      }))
       .redirect('/login');
   }
   catch(err){
     res
       .status(400)
-      .cookie('message', 'Error: ' + err)
+      .cookie('message', JSON.stringify({
+        text: 'Error: ' + err,
+        color: 'red'
+      }))
       .redirect('/');
   }
 
@@ -74,7 +89,10 @@ router.post('/login', async (req, res) => {
   if(error){
     return res
       .status(400)
-      .cookie('message', 'Error: ' + error.details[0].message)
+      .cookie('message', JSON.stringify({
+        text: 'Error: ' + error.details[0].message,
+        color: 'red'
+      }))
       .redirect('/login');
   }
 
@@ -83,7 +101,10 @@ router.post('/login', async (req, res) => {
   if(!user){
     return res
       .status(400)
-      .cookie('message', 'Email not found')
+      .cookie('message', JSON.stringify({
+        text: 'Email not found',
+        color: 'red'
+      }))
       .redirect('/login');
   }
 
@@ -92,7 +113,10 @@ router.post('/login', async (req, res) => {
   if(!validPass){
     return res
       .status(400)
-      .cookie('message', 'Invalid password')
+      .cookie('message', JSON.stringify({
+        text: 'Invalid password',
+        color: 'red'
+      }))
       .redirect('/login');
   }
 
@@ -100,7 +124,6 @@ router.post('/login', async (req, res) => {
   const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
   return res
     .cookie('auth-token', token)
-    .cookie('message', 'Successfully logged out')
     .redirect('/messaging');
   //res.header('auth-token', token).send(token);
 });
@@ -109,7 +132,10 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   return res
     .cookie('auth-token', '')
-    .cookie('message', 'Successfully logged out')
+    .cookie('message', JSON.stringify({
+      text: 'Successfully logged out',
+      color: 'green'
+    }))
     .redirect('/login');
 });
 
@@ -121,18 +147,27 @@ router.post('/delete', verify, async (req, res) => {
     if(!user){
       return res
         .status(400)
-        .cookie('message', "User doesn't exits")
+        .cookie('message', JSON.stringify({
+          text: "User doesn't exits",
+          color: 'red'
+        }))
         .redirect('/');
     }
     return res
       .cookie('auth-token', '')
-      .cookie('message', 'User deleted')
+      .cookie('message', JSON.stringify({
+        text: 'User deleted',
+        color: 'green'
+      }))
       .redirect('/');
   }
   catch(err){
     return res
       .status(400)
-      .cookie('message', 'Error: ' + err)
+      .cookie('message', JSON.stringify({
+        text: 'Error: ' + err,
+        color: 'red'
+      }))
       .redirect('/');
   }
 });
@@ -150,8 +185,11 @@ router.post('/forgotPassword', (req, res) => {
       User.findOne({ email: req.body.email }, function(err, user) {
         if (!user) {
           return res
-            .cookie('message', 'No account with that email address exists.')
             .status(400)
+            .cookie('message', JSON.stringify({
+              text: 'No account with that email address exists.',
+              color: 'red'
+            }))
             .redirect('/forgotPassword');
         }
 
@@ -187,11 +225,17 @@ router.post('/forgotPassword', (req, res) => {
   ], function(err) {
     if (err){
       return res
-        .cookie('message', err)
+        .cookie('message', JSON.stringify({
+          text: 'Error: ' + err,
+          color: 'red'
+        }))
         .redirect('/');
     }
     return res
-      .cookie('message', 'Password reset email sent')
+      .cookie('message', JSON.stringify({
+        text: 'Password reset email sent',
+        color: 'green'
+      }))
       .redirect('/');
   });
 });
@@ -203,7 +247,10 @@ router.post('/reset/:token', function(req, res) {
       User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, async function(err, user) {
         if (!user) {
           return res
-            .cookie('message', 'Password reset token is invalid or has expired.')
+            .cookie('message', JSON.stringify({
+              text: 'Password reset token is invalid or has expired.',
+              color: 'red'
+            }))
             .redirect('/');
         }
         if(req.body.password === req.body.confirm) {
@@ -221,7 +268,10 @@ router.post('/reset/:token', function(req, res) {
         }
         else {
             return res
-              .cookie('message', 'Passwords do not match.')
+              .cookie('message', JSON.stringify({
+                text: 'Passwords do not match.',
+                color: 'red'
+              }))
               .redirect('/reset/' + req.params['token']);
         }
       });
@@ -247,7 +297,10 @@ router.post('/reset/:token', function(req, res) {
     }
   ], function(err) {
     res
-      .cookie('message', 'Your password has been changed')
+      .cookie('message', JSON.stringify({
+        text: 'Your password has been changed',
+        color: 'greem'
+      }))
       .redirect('/');
   });
 });

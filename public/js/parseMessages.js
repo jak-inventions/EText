@@ -1,10 +1,10 @@
 // Checks message cookie onload creates a message element and deletes the cookie
 
 window.onload = () => {
-    let message = getCookie('message');
+    let message = JSON.parse(getCookie('message'));
     //make element
     if(message !== ''){
-        makeMessage(getCookie('message'));
+        makeMessage(message.text, message.color);
         document.cookie = 'message=';
     }
 };
@@ -16,9 +16,10 @@ function getCookie(cookiename) {
     return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./,"") : "");
 }
 
-function makeMessage(text){
+function makeMessage(text, color){
     let messageElement = document.createElement('div');
     messageElement.id = 'message';
+    messageElement.className = color;
     messageElement.textContent = text;
     let closeButton = document.createElement('a');
     closeButton.textContent = 'X';
