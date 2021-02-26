@@ -22,7 +22,7 @@ router.post('/register', async (req, res) => {
       return res
         .status(400)
         .cookie('message', 'Error: ' + error.details[0].message)
-        .redirect('/login');
+        .redirect('/register');
     }
   }
   else{
