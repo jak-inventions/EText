@@ -1,25 +1,6 @@
 
 /* Ids */
 
-#dialogue{
-  width: 1000px;
-  height: 500px;
-  padding: 0;
-}
-
-#contacts{
-  display: inline-block;
-  width: 199px;
-  height: 100%;
-  border-right: 1px solid #e6e6e6;
-}
-
-#conversation{
-  display: inline-block;
-  width: 800px;
-  height: 100%;
-}
-
 /* Classes */
 
 /* Tags */
