@@ -8,12 +8,12 @@ head
   // Fonts
   link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap')
 body
-  nav
-  main
+  div.temp
     | Now you're logged in 
     form(action='api/user/logout' method='POST')
       button(type='submit') Logout
-        
+  nav
+  main 
         
   footer
     script(src='/js/index.js')
