@@ -7,7 +7,8 @@ const messageSchema = new mongoose.Schema({
         max: 384000
     },
     sender: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'User'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     timestamp : {
         type : Date,
