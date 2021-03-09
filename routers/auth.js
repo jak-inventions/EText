@@ -21,7 +21,7 @@ router.post('/register', async (req, res) => {
     if(error){
       return res
         .status(400)
-        .cookie('message', JSON.stringify({
+        .cookie('alert', JSON.stringify({
           text: 'Error: ' + error.details[0].message,
           color: 'red'
         }))
@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
   }
   else{
     return res
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: "Passwords don't match",
         color: 'red'
       }))
@@ -42,7 +42,7 @@ router.post('/register', async (req, res) => {
   if(emailExists){
     return res
       .status(400)
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Email already has an account',
         color: 'red'
       }))
@@ -64,7 +64,7 @@ router.post('/register', async (req, res) => {
     const savedUser = await user.save();
     //res.send({user: user.id});
     res
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Account created',
         color: 'green'
       }))
@@ -73,7 +73,7 @@ router.post('/register', async (req, res) => {
   catch(err){
     res
       .status(400)
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Error: ' + err,
         color: 'red'
       }))
@@ -89,7 +89,7 @@ router.post('/login', async (req, res) => {
   if(error){
     return res
       .status(400)
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Error: ' + error.details[0].message,
         color: 'red'
       }))
@@ -101,7 +101,7 @@ router.post('/login', async (req, res) => {
   if(!user){
     return res
       .status(400)
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Email not found',
         color: 'red'
       }))
@@ -113,7 +113,7 @@ router.post('/login', async (req, res) => {
   if(!validPass){
     return res
       .status(400)
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Invalid password',
         color: 'red'
       }))
@@ -132,7 +132,7 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   return res
     .cookie('auth-token', '')
-    .cookie('message', JSON.stringify({
+    .cookie('alert', JSON.stringify({
       text: 'Successfully logged out',
       color: 'green'
     }))
@@ -147,7 +147,7 @@ router.post('/delete', verify, async (req, res) => {
     if(!user){
       return res
         .status(400)
-        .cookie('message', JSON.stringify({
+        .cookie('alert', JSON.stringify({
           text: "User doesn't exits",
           color: 'red'
         }))
@@ -155,7 +155,7 @@ router.post('/delete', verify, async (req, res) => {
     }
     return res
       .cookie('auth-token', '')
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'User deleted',
         color: 'green'
       }))
@@ -164,7 +164,7 @@ router.post('/delete', verify, async (req, res) => {
   catch(err){
     return res
       .status(400)
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Error: ' + err,
         color: 'red'
       }))
@@ -186,7 +186,7 @@ router.post('/forgotPassword', (req, res) => {
         if (!user) {
           return res
             .status(400)
-            .cookie('message', JSON.stringify({
+            .cookie('alert', JSON.stringify({
               text: 'No account with that email address exists.',
               color: 'red'
             }))
@@ -225,14 +225,14 @@ router.post('/forgotPassword', (req, res) => {
   ], function(err) {
     if (err){
       return res
-        .cookie('message', JSON.stringify({
+        .cookie('alert', JSON.stringify({
           text: 'Error: ' + err,
           color: 'red'
         }))
         .redirect('/');
     }
     return res
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Password reset email sent',
         color: 'green'
       }))
@@ -247,7 +247,7 @@ router.post('/reset/:token', function(req, res) {
       User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, async function(err, user) {
         if (!user) {
           return res
-            .cookie('message', JSON.stringify({
+            .cookie('alert', JSON.stringify({
               text: 'Password reset token is invalid or has expired.',
               color: 'red'
             }))
@@ -268,7 +268,7 @@ router.post('/reset/:token', function(req, res) {
         }
         else {
             return res
-              .cookie('message', JSON.stringify({
+              .cookie('alert', JSON.stringify({
                 text: 'Passwords do not match.',
                 color: 'red'
               }))
@@ -297,7 +297,7 @@ router.post('/reset/:token', function(req, res) {
     }
   ], function(err) {
     res
-      .cookie('message', JSON.stringify({
+      .cookie('alert', JSON.stringify({
         text: 'Your password has been changed',
         color: 'greem'
       }))

@@ -12,6 +12,7 @@ const checkAuth = require('./middleware/checkAuth.js');
 // Router Imports
 const uiRouter = require('./routers/ui.js');
 const authRouter = require('./routers/auth.js');
+const messagingRouter = require('./routers/messaging.js');
 
 // Constants
 const app = express();
@@ -38,6 +39,7 @@ app.use(cookieParser());
 // Routers
 app.use(uiRouter);
 app.use('/api/user/', authRouter);
+app.use('/api/messaging/', messagingRouter);
 
 app.listen(port, () => {
   console.log(`Running on port ${port}`);

@@ -5,17 +5,22 @@ head
   // CSS Imports
   link(rel='stylesheet' href='/css/index.css')
   link(rel='stylesheet' href='/css/messaging.css')
-  // Fonts
+  // Fonts & Icons
   link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap')
+  script(src='https://kit.fontawesome.com/9ff649492a.js' crossorigin='anonymous')
 body
   div.temp
     | Now you're logged in 
     form(action='api/user/logout' method='POST')
       button(type='submit') Logout
-  nav
-  main 
-      form(action='/api/message/send')
-        input(type='text')
-        button(type='submit') Send   
+  nav#menu
+  main
+    section#chat-header
+      a(onclick='openNav();')#nav-button
+        i(class='fa fa-bars')
+    section#chat-screen
+    form(action='/api/message/send')#textbox
+      input(type='text')
+      button(type='submit') Send   
   footer
     script(src='/js/index.js')
