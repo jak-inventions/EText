@@ -53,8 +53,14 @@
     align-items: center;
 }
 
-#nav-button i{
+#nav-button{
     font-size: 32px;
+    cursor: pointer;
+}
+
+#menu{
+    z-index: 999999999;
+    
 }
 
 /* Classes */

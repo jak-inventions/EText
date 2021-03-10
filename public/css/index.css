@@ -1,86 +1,6 @@
 
 /* Ids */
 
-#icon{
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#title{
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 100%;
-}
-
-#title h1{
-  font-size: 28px;
-}
-
-#title h2{
-  font-size: 20px;
-}
-
-#menu{
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 24px;
-  margin: 30px;
-}
-
-#menu a{
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#menu a:active.un:after{
-  width: 50%;
-}
-
-/* Classes */
-
-.un{
-  display: inline-block;
-}
-
-.un:after{
-  content: '';
-  width: 0px;
-  height: 2px;
-  display: block;
-  margin: auto;
-  margin-top: 4px;
-  background: white;
-  transition: 0.3s;
-}
-
-.un:hover:after{
-  width: 100%;
-}
-
-.desktopOnly{
-  display: inherit;
-}
-
-.mobileOnly{
-  display: none;
-}
-
-.menuButton{
-  padding: 0px;
-  margin: 0px;
-  color: white;
-  border: none;
-  background-color: transparent;
-  font-size: 24px;
-}
-
-.menuButton:active.un:after{
-  width: 50%;
-}
-
 #alert{
   position: absolute;
   bottom: 25px;
@@ -109,6 +29,8 @@
   float: right;
   cursor: pointer;
 }
+
+/* Classes */
 
 /* Tags */
 
@@ -171,39 +93,5 @@ form{
 /* Mobile */
 
 @media (max-width: 850px) {
-
-  #icon{
-    width: 75px;
-    height: 75px;
-  }
-
-  #title h1{
-    font-size: 26px;
-  }
-
-  #title h2{
-    font-size: 18px;
-  }
-
-  #dialogue{
-    width: 300px;
-  }
-
-  #dialogue input{
-    font-size: 16px;
-    width: 90%;
-  }
-
-  .desktopOnly{
-    display: none;
-  }
-
-  .mobileOnly{
-    display: inherit;
-  }
-
-  .message{
-    width: 350px;
-  }
 
 }
