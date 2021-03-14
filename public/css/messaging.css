@@ -60,7 +60,19 @@
 
 #menu{
     z-index: 9999999999;
-    
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    background: darkgrey;
+}
+
+#menu.closed{
+    width: 0%;
+}
+
+#menu.open{
+    width: 30%;
 }
 
 /* Classes */

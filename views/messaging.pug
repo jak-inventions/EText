@@ -13,11 +13,11 @@ body
     | Now you're logged in 
     form(action='api/user/logout' method='POST')
       button(type='submit') Logout
-  nav#menu
+  nav#menu.closed
     button#logout Logout
   main
     section#chat-header
-      a(onclick='openNav();')#nav-button
+      a(onclick='console.log(3);openNav();')#nav-button
         i(class='fa fa-bars')
     section#chat-screen
     form(action='/api/message/send')#textbox
