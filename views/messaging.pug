@@ -17,7 +17,7 @@ body
     button#logout Logout
   main
     section#chat-header
-      a(onclick='console.log(3);openNav();')#nav-button
+      a(onclick='openNav();')#nav-button
         i(class='fa fa-bars')
     section#chat-screen
     form(action='/api/message/send')#textbox
