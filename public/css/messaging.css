@@ -61,29 +61,35 @@
 
 #menu{
     z-index: 9999999999;
-    position: absolute;
-    width: 0%;
+    position: relative;
+    width: 30%;
     height: 100%;
+    margin-left: -30%;
     overflow: hidden;
-    background: darkgrey;
+    background: white;
+    border-right: 1px solid grey;
+    transition: 0.5s margin-left;
 }
 
 #menu.closed{
-    width: 0%;
+    margin-left: -30%;
 }
 
 #menu.open{
-    width: 30%;
+    margin-left: 0;
+}
+
+#menu #close{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    font-size: 28px;
 }
 
 /* Classes */
-
-.temp{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    display: none;
-}
 
 /* Tags */
 
