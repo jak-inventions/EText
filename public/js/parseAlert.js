@@ -24,7 +24,7 @@ function makeAlert(text, color){
     alertElement.textContent = text;
     let closeButton = document.createElement('a');
     closeButton.textContent = 'X';
-    closeButton.addEventListener('click', (event) => {deleteMessage();});
+    closeButton.addEventListener('click', (event) => {deleteAlert();});
     alertElement.appendChild(closeButton);
     document.body.appendChild(alertElement);
 }
