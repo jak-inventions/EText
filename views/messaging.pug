@@ -12,8 +12,10 @@ body
   nav#menu.closed
     form(action='api/user/logout' method='POST')#logout
       button(type='submit') Logout
-    button#close(onclick='toggleMenu("closed");')
-      i(class='fa fa-times')
+    section#menu-header
+      h1 Chats
+      button#close(onclick='toggleMenu("closed");')
+        i(class='fa fa-times')
   main
     section#chat-header
       a(onclick='toggleMenu("open");')#nav-button
