@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, userEffect} from 'react';
 import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Text, Input, Button } from 'react-native-elements';
@@ -6,10 +6,9 @@ import Spacer from './Spacer';
 
 const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
     return (
-        <View style={styles.container}>
-            
+        <View style={{marginBottom: type === 'Sign In' ? 150 : 100}}>
             <Spacer>
-                <Text style={styles.header} h3>{headerText}</Text>
+                <Text h3Style={styles.header} h3>{headerText}</Text>
             </Spacer>
             <Input
                 placeholder='Email'
@@ -23,6 +22,24 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
                     </Spacer>
                 }
             />
+            {
+                type === 'Sign Up'
+                    ? (
+                        <Input
+                            placeholder='Username'
+                            leftIcon={
+                                <Spacer space={5}>
+                                    <Icon
+                                        name='user'
+                                        size={28}
+                                        color='lightgrey'
+                                    />
+                                </Spacer>
+                            }
+                        />
+                    )
+                    : null
+            }
             <Input
                 placeholder='Password'
                 leftIcon={
@@ -34,6 +51,7 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
                         />
                     </Spacer>
                 }
+                secureTextEntry={true}
             />
             {
                 type === 'Sign Up'
@@ -49,9 +67,19 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
                                     />
                                 </Spacer>
                             }
+                            secureTextEntry={true}
                         />
                     )
-                    : null
+                    : type === 'Sign In'
+                        ? (
+                            /*<TouchableOpacity>
+                                <Spacer>
+                                    <Text style={styles.forgotPassword}>ForgotPassword</Text>
+                                </Spacer>
+                            </TouchableOpacity>*/
+                            null
+                        )
+                        : null
             }
             <Button
                 title={type}
@@ -68,7 +96,7 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
                 have an account?
                 {"\n"}
                 <TouchableOpacity onPress={onSwitch}>
-                    <Text style={styles.link}>
+                    <Text style={styles.switchPage}>
                         {
                             type === 'Sign In'
                                 ? 'Sign up'
@@ -83,11 +111,9 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        marginBottom: 150
-    },
     header: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'normal'
     },
     subtext: {
         marginTop: 15,
@@ -95,7 +121,12 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginTop: 15
     },
-    link: {
+    forgotPassword: {
+        color: 'blue',
+        textDecorationLine: 'underline',
+        fontSize: 18
+    },
+    switchPage: {
         color: 'blue',
         textDecorationLine: 'underline',
         fontSize: 18,

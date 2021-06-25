@@ -8,12 +8,14 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 // Screens
 import SignUpScreen from './src/screens/SignUpScreen';
 import SignInScreen from './src/screens/SignInScreen';
+import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 
 const switchNavigator = createSwitchNavigator({
   //ResolveAuth: ResolveAuthScreen,
   loginFlow: createStackNavigator({
     SignIn: SignInScreen,
-    SignUp: SignUpScreen
+    SignUp: SignUpScreen,
+    ResetPasswordScreen: ResetPasswordScreen
   })
   /*mainFlow: createBottomTabNavigator({
     trackListFlow: createStackNavigator({
