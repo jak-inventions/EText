@@ -1,10 +1,15 @@
-import React, {useEffect, userEffect} from 'react';
+import React, { useState } from 'react';
 import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Text, Input, Button } from 'react-native-elements';
 import Spacer from './Spacer';
 
 const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
+    const [email, setEmail] = useState(null);
+    const [username, setUsername] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [passwordConfirm, setPasswordConfirm] = useState(null);
+
     return (
         <View style={{marginBottom: type === 'Sign In' ? 150 : 100}}>
             <Spacer>
@@ -12,6 +17,7 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
             </Spacer>
             <Input
                 placeholder='Email'
+                onChangeText={setEmail}
                 leftIcon={
                     <Spacer space={5}>
                         <Icon
@@ -27,6 +33,7 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
                     ? (
                         <Input
                             placeholder='Username'
+                            onChangeText={setUsername}
                             leftIcon={
                                 <Spacer space={5}>
                                     <Icon
@@ -42,6 +49,7 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
             }
             <Input
                 placeholder='Password'
+                onChangeText={setPassword}
                 leftIcon={
                     <Spacer space={5}>
                         <Icon
@@ -58,6 +66,7 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
                     ? (
                         <Input
                             placeholder='Confirm Password'
+                            onChangeText={setPasswordConfirm}
                             leftIcon={
                                 <Spacer space={5}>
                                     <Icon
@@ -83,7 +92,7 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
             }
             <Button
                 title={type}
-                onPress={onSubmit}
+                onPress={() => onSubmit({ email, username, password, passwordConfirm })}
             />
             <Text style={styles.subtext}>
                 {

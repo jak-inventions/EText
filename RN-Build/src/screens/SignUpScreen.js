@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
 import AuthForm from '../components/AuthForm';
 import Spacer from '../components/Spacer';
+import { Context as AuthContext } from '../context/AuthContext';
 
 const SignUpScreen = ({ navigation }) => {
+    const { signUp } = useContext(AuthContext);
+
     return(
         <View style={styles.container}>
             <Spacer space={30}>
@@ -13,9 +16,7 @@ const SignUpScreen = ({ navigation }) => {
                     onSwitch={() => {
                         navigation.navigate('SignIn');
                     }}
-                    onSubmit={() => {
-                        // Sign Up
-                    }}
+                    onSubmit={signUp}
                 />
             </Spacer>
         </View>
