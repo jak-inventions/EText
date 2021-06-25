@@ -1,15 +1,21 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from 'react-native-elements';
 import AuthForm from '../components/AuthForm';
 import Spacer from '../components/Spacer';
 
-const SignInScreen = () => {
+const SignInScreen = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <Spacer space={30}>
                 <AuthForm
+                    type='Sign In'
                     headerText='Welcome to EText 👋'
+                    onSwitch={() => {
+                        navigation.navigate('SignUp');
+                    }}
+                    onSubmit={() => {
+                        // Sign In
+                    }}
                 />
             </Spacer>
         </View>

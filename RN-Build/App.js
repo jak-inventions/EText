@@ -12,8 +12,8 @@ import SignInScreen from './src/screens/SignInScreen';
 const switchNavigator = createSwitchNavigator({
   //ResolveAuth: ResolveAuthScreen,
   loginFlow: createStackNavigator({
-    Signin: SignInScreen,
-    Signup: SignUpScreen
+    SignIn: SignInScreen,
+    SignUp: SignUpScreen
   })
   /*mainFlow: createBottomTabNavigator({
     trackListFlow: createStackNavigator({

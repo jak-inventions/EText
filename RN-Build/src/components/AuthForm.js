@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Text, Input, Button } from 'react-native-elements';
 import Spacer from './Spacer';
 
-const AuthForm = ({ headerText }) => {
+const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
     return (
         <View style={styles.container}>
             
@@ -35,13 +35,47 @@ const AuthForm = ({ headerText }) => {
                     </Spacer>
                 }
             />
-            <Button title='Sign In' />
-            <Text style={style.subtext}>
-                <Text>
-                    Don't have an account?
-                </Text>
-                <TouchableOpacity>
-                    <Text style={styles.link}>Sign up</Text>
+            {
+                type === 'Sign Up'
+                    ? (
+                        <Input
+                            placeholder='Confirm Password'
+                            leftIcon={
+                                <Spacer space={5}>
+                                    <Icon
+                                        name='lock'
+                                        size={28}
+                                        color='lightgrey'
+                                    />
+                                </Spacer>
+                            }
+                        />
+                    )
+                    : null
+            }
+            <Button
+                title={type}
+                onPress={onSubmit}
+            />
+            <Text style={styles.subtext}>
+                {
+                    type === 'Sign In'
+                        ? "Don't "
+                        : type === 'Sign Up'
+                            ? 'Already '
+                            : ''
+                }
+                have an account?
+                {"\n"}
+                <TouchableOpacity onPress={onSwitch}>
+                    <Text style={styles.link}>
+                        {
+                            type === 'Sign In'
+                                ? 'Sign up'
+                                : type === 'Sign Up'
+                                    ? 'Sign in'
+                                    : ''}
+                    </Text>
                 </TouchableOpacity>
             </Text>
         </View>
@@ -56,11 +90,16 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     subtext: {
-        textAlign: 'center'
+        marginTop: 15,
+        textAlign: 'center',
+        fontSize: 18,
+        marginTop: 15
     },
     link: {
         color: 'blue',
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        fontSize: 18,
+        marginTop: 10
     }
 });
 
