@@ -5,12 +5,15 @@ import {
 } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { setNavigator } from './src/navigationRef';
 // Context
 import { Provider as AuthProvider } from './src/context/AuthContext';
 // Screens
 import SignUpScreen from './src/screens/SignUpScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
+import ConversationsScreen from './src/screens/ConversationsScreen';
+import AccountScreen from './src/screens/AccountScreen';
 
 const switchNavigator = createSwitchNavigator({
   //ResolveAuth: ResolveAuthScreen,
@@ -18,15 +21,11 @@ const switchNavigator = createSwitchNavigator({
     SignIn: SignInScreen,
     SignUp: SignUpScreen,
     ResetPasswordScreen: ResetPasswordScreen
-  })
-  /*mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList: TrackListScreen,
-      TrackDetail: TrackDetailScreen
-    }),
-    TrackCreate: TrackCreateScreen,
+  }),
+  mainFlow: createBottomTabNavigator({
+    Conversations: ConversationsScreen,
     Account: AccountScreen
-  })*/
+  })
 });
 
 const App = createAppContainer(switchNavigator);
@@ -34,7 +33,7 @@ const App = createAppContainer(switchNavigator);
 export default () => {
   return (
     <AuthProvider>
-      <App />
+      <App ref={(navigator) => { setNavigator(navigator) }} />
     </AuthProvider>
   );
 };
