@@ -111,7 +111,8 @@ const AuthForm = ({ type, headerText, onSwitch, onSubmit }) => {
                                 ? 'Sign up'
                                 : type === 'Sign Up'
                                     ? 'Sign in'
-                                    : ''}
+                                    : ''
+                        }
                     </Text>
                 </TouchableOpacity>
             </Text>

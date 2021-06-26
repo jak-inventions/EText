@@ -45,9 +45,14 @@ const signUp = (dispatch) => async ({ email, username, password, passwordConfirm
     }
 };
 
+const checkSignedIn = (dispatch) => async () => {
+    const response = await etextApi.get('/');
+    console.log(response);
+}
+
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { signIn, signUp, /*signout, clearErrorMessage, tryLocalSignin*/ },
+    { signIn, signUp, checkSignedIn/*signout, clearErrorMessage*/ },
     { /*isSignedIn: false, errorMessage: ''*/ }
 );
 

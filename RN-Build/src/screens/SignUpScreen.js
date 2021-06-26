@@ -12,7 +12,7 @@ const SignUpScreen = ({ navigation }) => {
             <Spacer space={30}>
                 <AuthForm
                     type='Sign Up'
-                    headerText='Welcome aboard ⛵'
+                    headerText='Welcome Aboard ⛵'
                     onSwitch={() => {
                         navigation.navigate('SignIn');
                     }}
