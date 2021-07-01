@@ -48,7 +48,7 @@ const signUp = (dispatch) => async ({ email, username, password, passwordConfirm
     }
 };
 
-const signout = (dispatch) => async () => {
+const signOut = (dispatch) => async () => {
     await AsyncStorage.removeItem('token');
     dispatch({ type: 'signout' });
     navigate('loginFlow');
@@ -71,7 +71,7 @@ const checkSignedIn = (dispatch) => async () => {
 
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { signIn, signUp, checkSignedIn, signout, /*clearErrorMessage*/ },
+    { signIn, signUp, checkSignedIn, signOut, /*clearErrorMessage*/ },
     { /*isSignedIn: false,*/ errorMessage: '' }
 );
 
