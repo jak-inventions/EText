@@ -19,11 +19,12 @@ const authReducer = (state, action) => {
 const signIn = (dispatch) => async ({ email, password }) => {
     try{
         const response = await etextApi.post('/signin', { email, password });
-        const token = response.data.token;
-        dispatch({ type: 'sign_in', payload: token });
+        await AsyncStorage.setItem('token', response.data.token);
+        dispatch({ type: 'sign_in', payload: response.data.token });
         navigate('mainFlow');
     }
     catch(err){
+        console.log(`Error Occured: ${err}`);
         dispatch({ type: 'add_error', payload: err });
     }
 };
@@ -35,19 +36,31 @@ const signUp = (dispatch) => async ({ email, username, password, passwordConfirm
     else{
         try{
             const response = await etextApi.post('/signup', { email, username, password });
-            const token = response.data.token;
-            dispatch({ type: 'sign_in', payload: token });
+            await AsyncStorage.setItem('token', response.data.token);
+            dispatch({ type: 'sign_in', payload: response.data.token });
             navigate('mainFlow');
         }
-        catch(err){            
+        catch(err){          
+            console.log(`Error Occured: ${err}`);  
             dispatch({ type: 'add_error', payload: `An error occurred: ${err}` });
         }
     }
 };
 
 const checkSignedIn = (dispatch) => async () => {
-    const response = await etextApi.get('/');
-    console.log(response);
+    try{
+        const token = AsyncStorage.getItem('token');
+        console.log(`Token ${token}`);
+        const response = await etextApi.get('/', {
+            headers: {
+                authorization: token
+            }
+        });
+        console.log(response);
+    }
+    catch(err){
+        console.log('Not signed in');
+    }
 }
 
 export const { Provider, Context } = createDataContext(
