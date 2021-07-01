@@ -6,8 +6,7 @@ import Spacer from '../components/Spacer';
 import { Context as AuthContext } from '../context/AuthContext';
 
 const SignInScreen = ({ navigation }) => {
-    const { state: { errorMessage }, signIn, checkSignedIn } = useContext(AuthContext);
-    checkSignedIn();
+    const { state: { errorMessage }, signIn } = useContext(AuthContext);
 
     return(
         <View style={styles.container}>

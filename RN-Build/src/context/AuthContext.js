@@ -19,6 +19,7 @@ const authReducer = (state, action) => {
 const signIn = (dispatch) => async ({ email, password }) => {
     try{
         const response = await etextApi.post('/signin', { email, password });
+        console.log(response.data.token)
         await AsyncStorage.setItem('token', response.data.token);
         dispatch({ type: 'sign_in', payload: response.data.token });
         navigate('mainFlow');
@@ -47,25 +48,30 @@ const signUp = (dispatch) => async ({ email, username, password, passwordConfirm
     }
 };
 
+const signout = (dispatch) => async () => {
+    await AsyncStorage.removeItem('token');
+    dispatch({ type: 'signout' });
+    navigate('loginFlow');
+};
+
 const checkSignedIn = (dispatch) => async () => {
     try{
-        const token = AsyncStorage.getItem('token');
-        console.log(`Token ${token}`);
+        const token = await AsyncStorage.getItem('token');
         const response = await etextApi.get('/', {
             headers: {
                 authorization: token
             }
         });
-        console.log(response);
+        navigate('mainFlow');
     }
     catch(err){
-        console.log('Not signed in');
+        navigate('loginFlow');
     }
 }
 
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { signIn, signUp, checkSignedIn/*signout, clearErrorMessage*/ },
-    { /*isSignedIn: false, errorMessage: ''*/ }
+    { signIn, signUp, checkSignedIn, signout, /*clearErrorMessage*/ },
+    { /*isSignedIn: false,*/ errorMessage: '' }
 );
 
