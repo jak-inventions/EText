@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from 'react-native-elements';
 import AuthForm from '../components/AuthForm';
 import Spacer from '../components/Spacer';
 import { Context as AuthContext } from '../context/AuthContext';
