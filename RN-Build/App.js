@@ -26,8 +26,10 @@ const switchNavigator = createSwitchNavigator({
     ResetPasswordScreen: ResetPasswordScreen
   }),
   mainFlow: createBottomTabNavigator({
-    Conversations: {
-      screen: ConversationsScreen,
+    conversationsFlow: {
+      screen: createStackNavigator({
+        Conversations: ConversationsScreen
+      }),
       navigationOptions: {
         tabBarLabel: 'Conversations',
         tabBarIcon: (({ tintColor }) => (
