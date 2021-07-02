@@ -15,6 +15,8 @@ import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 import ConversationsScreen from './src/screens/ConversationsScreen';
 import AccountScreen from './src/screens/AccountScreen';
 import ResolveAuthScreen from './src/screens/ResolveAuthScreen';
+// Icon Stuff
+import { Feather } from '@expo/vector-icons';
 
 const switchNavigator = createSwitchNavigator({
   ResolveAuth: ResolveAuthScreen,
@@ -24,8 +26,24 @@ const switchNavigator = createSwitchNavigator({
     ResetPasswordScreen: ResetPasswordScreen
   }),
   mainFlow: createBottomTabNavigator({
-    Conversations: ConversationsScreen,
-    Account: AccountScreen
+    Conversations: {
+      screen: ConversationsScreen,
+      navigationOptions: {
+        tabBarLabel: 'Conversations',
+        tabBarIcon: (({ tintColor }) => (
+          <Feather name='message-circle' color={tintColor} size={24} />
+        ))
+      }
+    },
+    Account: {
+      screen: AccountScreen,
+      navigationOptions: {
+        tabBarLabel: 'Account',
+        tabBarIcon: (({ tintColor }) => (
+          <Feather name='user' color={tintColor} size={24} />
+        ))
+      }
+    }
   })
 });
 
