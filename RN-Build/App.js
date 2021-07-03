@@ -38,7 +38,7 @@ const switchNavigator = createSwitchNavigator({
       }
     },
     Account: {
-      screen: AccountScreen,
+      screen: AccountScreen,  
       navigationOptions: {
         tabBarLabel: 'Account',
         tabBarIcon: (({ tintColor }) => (

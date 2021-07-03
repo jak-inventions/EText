@@ -6,11 +6,14 @@ import { navigate } from '../navigationRef';
 const authReducer = (state, action) => {
     switch(action.type){
         case 'add_error':
+            console.log(action.payload);
             return { ...state, errorMessage: action.payload };
         case 'sign_in':
             return { ...state, token: action.payload, errorMessage: '' };
         case 'sign_out':
             return { ...state, token: null, errorMessage: '' };
+        case 'get_user_info':
+            return { ...state, user: action.payload, errorMessage: '' }
         default:
             return state;
     }
@@ -54,7 +57,7 @@ const signOut = (dispatch) => async () => {
     navigate('loginFlow');
 };
 
-const checkSignedIn = (dispatch) => async () => {
+const getUserInfo = (dispatch) => async () => {
     try{
         const token = await AsyncStorage.getItem('token');
         const response = await etextApi.get('/', {
@@ -62,16 +65,34 @@ const checkSignedIn = (dispatch) => async () => {
                 authorization: token
             }
         });
+        const { username, email } = response.data;
+        dispatch({ type: 'get_user_info', payload: { username, email } });
+    }
+    catch(err){
+        console.log('An error occured: ' + err);
+        dispatch({ type: 'add_error', payload: `Ran into an error: ${err}` })
+    }
+}
+
+const checkSignedIn = (dispatch) => async () => {
+    try{
+        const token = await AsyncStorage.getItem('token');
+        const { email, username } = await etextApi.get('/', {
+            headers: {
+                authorization: token
+            }
+        });
         navigate('mainFlow');
     }
     catch(err){
+        dispatch({ type: 'add_error', payload: `Ran into an error: ${err}` });
         navigate('loginFlow');
     }
 }
 
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { signIn, signUp, checkSignedIn, signOut, /*clearErrorMessage*/ },
-    { /*isSignedIn: false,*/ errorMessage: '' }
+    { signIn, signUp, checkSignedIn, signOut, getUserInfo },
+    { /*isSignedIn: false,*/ user: {}, errorMessage: '' }
 );
 
