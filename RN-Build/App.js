@@ -13,7 +13,8 @@ import SignUpScreen from './src/screens/SignUpScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 import ConversationsScreen from './src/screens/ConversationsScreen';
-import AccountScreen from './src/screens/AccountScreen';
+import AccountViewScreen from './src/screens/AccountViewScreen';
+import AccountEditScreen from './src/screens/AccountEditScreen';
 import ResolveAuthScreen from './src/screens/ResolveAuthScreen';
 // Icon Stuff
 import { Feather } from '@expo/vector-icons';
@@ -37,8 +38,11 @@ const switchNavigator = createSwitchNavigator({
         ))
       }
     },
-    Account: {
-      screen: AccountScreen,  
+    accountFlow: {
+      screen: createStackNavigator({
+        AccountView: AccountViewScreen,
+        AccountEdit: AccountEditScreen
+      }),
       navigationOptions: {
         tabBarLabel: 'Account',
         tabBarIcon: (({ tintColor }) => (

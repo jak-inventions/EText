@@ -5,7 +5,7 @@ import { Text, Button, Divider } from 'react-native-elements';
 import Spacer from '../components/Spacer';
 import { Context as AuthContext } from '../context/AuthContext';
 
-const AccountScreen = ({ navigation }) => {
+const AccountViewScreen = ({ navigation }) => {
     const { state: { user }, signOut, getUserInfo } = useContext(AuthContext);
     getUserInfo();
 
@@ -17,12 +17,22 @@ const AccountScreen = ({ navigation }) => {
                 <Text h3Style={styles.standardText} h3>{user.username || 'Loading'}</Text>
                 <Text h4Style={styles.standardText} h4>{user.email || 'Loading'}</Text>
                 <Button
+                    title='Edit Account'
+                    onPress={() => navigation.navigate('AccountEdit')}
+                />
+                <Button
                     title='Logout'
                     onPress={signOut}
                 />
             </Spacer>
         </SafeAreaView>
     );
+};
+
+AccountViewScreen.navigationOptions = () => {
+    return {
+        headerShown: false
+    };
 };
 
 const styles = StyleSheet.create({
@@ -34,4 +44,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AccountScreen;
+export default AccountViewScreen;
