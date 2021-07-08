@@ -16,14 +16,18 @@ const AccountViewScreen = ({ navigation }) => {
                 <Divider orientation="horizontal" />
                 <Text h3Style={styles.standardText} h3>{user.username || 'Loading'}</Text>
                 <Text h4Style={styles.standardText} h4>{user.email || 'Loading'}</Text>
-                <Button
-                    title='Edit Account'
-                    onPress={() => navigation.navigate('AccountEdit')}
-                />
-                <Button
-                    title='Logout'
-                    onPress={signOut}
-                />
+                <Spacer>
+                    <Button
+                        title='Edit Account'
+                        onPress={() => navigation.navigate('AccountEdit')}
+                    />
+                </Spacer>
+                <Spacer>
+                    <Button
+                        title='Logout'
+                        onPress={signOut}
+                    />
+                </Spacer>
             </Spacer>
         </SafeAreaView>
     );
