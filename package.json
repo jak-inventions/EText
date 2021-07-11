@@ -1,34 +1,30 @@
 {
-  "name": "etext",
-  "version": "1.0.0",
-  "description": "Formal yet efficient messaging",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jak-inventions/EText.git"
-  },
-  "author": "Jak Inventions",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jak-inventions/EText/issues"
-  },
-  "homepage": "https://github.com/jak-inventions/EText#readme",
   "dependencies": {
-    "@hapi/joi": "^15.0.3",
-    "async": "^3.2.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.5",
-    "crypto": "^1.0.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.15",
-    "nodemailer": "^6.4.6",
-    "pug": "^2.0.4"
-  }
+    "@react-native-async-storage/async-storage": "^1.15.5",
+    "axios": "^0.21.1",
+    "expo": "~41.0.1",
+    "expo-status-bar": "~1.0.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
+    "react-native-elements": "^3.4.2",
+    "react-native-safe-area-context": "^3.2.0",
+    "react-native-vector-icons": "^8.1.0",
+    "react-native-web": "~0.13.12",
+    "react-navigation": "^4.4.4",
+    "react-navigation-stack": "^2.10.4",
+    "react-navigation-tabs": "^2.11.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0"
+  },
+  "private": true
 }
