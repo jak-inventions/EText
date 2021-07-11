@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/Users/jak/Desktop/Github/EText/assets/logo/logo-dark.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="0.61755664"
+     inkscape:cx="116.5885"
+     inkscape:cy="207.26844"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Background"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <rect
+       style="fill:#f9f9f9;stroke-width:0.799573"
+       id="rect31"
+       width="132.29167"
+       height="132.29167"
+       x="-3.5527137e-15"
+       y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Icon">
+    <ellipse
+       style="fill:#1a1a1a;stroke-width:0.211905"
+       id="path1975"
+       cx="71.802399"
+       cy="52.365044"
+       rx="34.99979"
+       ry="25.90671"
+       inkscape:export-filename="/Users/jak/Desktop/Github/EText/assets/logo/logo-light.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#1a1a1a;stroke-width:0.0638005"
+       id="path1975-1"
+       cx="43.569588"
+       cy="91.913452"
+       rx="10.496673"
+       ry="7.830502"
+       inkscape:export-filename="/Users/jak/Desktop/Github/EText/assets/logo/logo-light.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>
